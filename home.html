@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <link rel="stylesheet" href="home.css"/>  
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@300&display=swap" rel="stylesheet">
+   
+</head>
+<body>
+    <nav>
+        <div>
+            <h1>Qpies Gallery</h1>
+        </div>
+        <div>      
+            <button id="post" onclick="add()">Add Post </button> 
+                    
+            <button id="sign_out" onclick="logout()"> Logout </button>                              
+        </div>    
+    </nav>
+
+    <div id="addItem">
+
+        <h1>Add Item</h1>
+
+        <form class="addItemForm">
+
+            <div>
+                
+                <p>Item Name:</p>
+                <input type="text" id="itemName" required> 
+
+                <p>Image Url:</p>
+                <input type="text" id="image" required > 
+
+                <p>Pirce:</p>
+                <input type="number" id="price"  placeholder="0000 €" required/>
+                   
+                <p >Item Description:</p>
+                <textarea id="itemDescription" required></textarea>
+
+            </div>
+            
+            <button type="submit">Add Item</button>
+            <button onclick="cancle()">Cancle</button>
+
+         </form>  
+    </div>
+    <div id="updateItem">
+
+        <h1>Edit Item</h1>
+        <form class="updateItem">
+
+            <div>              
+                <p>Item Name:</p>
+                <input type="text" id="upName" required> 
+                <p>Image Url:</p>
+                <input type="text" id="upImg" required> 
+                <p>Pirce:</p>
+                <input type="number" id="upPrice"  placeholder="0000 €" required/>                 
+                <p >Item Description:</p>
+                <textarea id="upDescription" required></textarea>
+            </div> 
+
+            <button type="submit">Update</button>
+            <button onclick="cancle()">Cancle</button>
+
+         </form>  
+    </div>
+        <div class="display">
+            <h1>Vincent Van Gogh Museum</h1>
+            <div id="products"></div>
+        </div>     
+        
+    <script src = "home.js"></script>
+    <script> 
+
+        // remove data and logout
+
+        function logout(){
+            
+            localStorage.removeItem('userinfo');
+            window.location.href = "login.html";
+        }
+        function add(){
+
+            document.getElementById("addItem").style.display = "block";
+            document.getElementById("updateItem").style.display = "none";
+
+        }
+        
+        function cancle(){
+
+            document.getElementById("addItem").style.display = "none";
+            document.getElementById("updateItem").style.display = "none";
+        }
+       
+
+    </script>
+</body>
+</html>
+

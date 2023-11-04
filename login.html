@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <!-- links  -->
+    <link rel="stylesheet" href="login.css">   
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@300&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <nav>
+        <div>
+            <h1>QPies</h1>
+        </div>
+        <div>
+            <button onclick="signIn()">Sign In</button>           
+            <button onclick="signup()">Sign Up</button>              
+        </div>   
+    </nav>
+
+        <div id="login">
+
+            <h2>Login</h2>
+
+            <span id="mess" style="color:rgb(173, 3, 32);display: none;"></span>
+            <form id = "login_form" >
+    
+                <div>
+
+                    <label>username</label>
+                    <input type="text" id="signin-username"  required>
+                         
+                    <label>Password</label>
+                    <input type="password" id="signin-password"  required>
+                </div>
+
+                <button type="submit">Sign In</button>
+                <button onclick="cancle()">Cancle</button>
+
+                
+            </form>          
+    
+        </div>
+        <div id="singup">
+
+            <h2>Sign Up</h2>
+            <span id="mess1" style="color:rgb(173, 3, 32);display: block;"></span>
+
+
+            <form id = "signup_form" >
+    
+                <div>
+
+                    <label>username</label>
+                    <input type="text" id="new-username" required>
+
+                    <label>Password</label>
+                    <input type="password" id="new-pass" required>
+
+                </div>
+
+                <button type ="submit">Sign Up</button>
+                <button onclick="cancle()">Cancle</button>
+
+                
+            </form>          
+    
+        </div>
+
+        <div class="display">
+            <h1>Vincent Van Gogh Museum</h1>
+            <div id="products"></div>
+        </div>
+
+
+    </div>
+    <script> 
+        //signUp
+        function signup(){
+        document.getElementById("singup").style.display = "block";
+        document.getElementById("login").style.display = "none";
+        }
+
+        // signIn
+        function signIn(){
+        document.getElementById("login").style.display = "block";
+        document.getElementById("singup").style.display = "none";
+        }
+
+        function cancle(){
+        document.getElementById("login").style.display = "none";
+        document.getElementById("singup").style.display = "none";
+        }
+    </script>
+
+    <script src="login.js"></script>
+</body>
+</html>
